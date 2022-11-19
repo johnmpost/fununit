@@ -14,7 +14,7 @@
 - framework-agnostic
   - funtest is not coupled with any particular testing framework
   - rather, it has adapters to translate funtest tests into any other format
-  - as of now, there is an adapter for the built-in `unittest` module
+  - currently, there is an adapter for the built-in `unittest` module
 
 funtest is a library to test pure functions. Take a look at `example.py` to see funtest being used. Because the API is very flexible, you can extend and build its simple functions into a custom flow if you want. But, here is the standard approach to writing tests with funtest:
 

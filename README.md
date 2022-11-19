@@ -1,6 +1,6 @@
 # funtest
 
-`funtest` is a functional, declarative, unit-testing library for testing pure functions in Python. It has the following characteristics:
+`funtest` ("**fun**ctional unit **test**ing") is a functional, declarative, unit-testing library for testing pure functions in Python. It has the following characteristics:
 
 - functional
   - funtest makes use of functional programming ideas such as higher-order functions and pure functions

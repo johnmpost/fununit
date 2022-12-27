@@ -15,15 +15,15 @@ multiply_tests = TestSuite.from_cases(
     test_cases = [
         TestCase.create(
             case_name = "identity",
-            parameters = [1, 2],
+            parameters = (1, 2),
             expected = 2),
         TestCase.create(
             case_name = "normal_case",
-            parameters = [3, 4],
+            parameters = (3, 4),
             expected = 12),
         TestCase.create(
             case_name = "zero",
-            parameters = [0, 6],
+            parameters = (0, 6),
             expected = 0),
     ])
 
@@ -51,3 +51,17 @@ all_tests = adapters.unittest.build_load_bundle_suites(
     multiply_tests,
     ])
 unittest.TextTestRunner(verbosity=2).run(all_tests)
+
+# OUTPUT:
+
+# test_to_lower_already_lower (.TestToLower) ... ok
+# test_to_lower_empty_string (.TestToLower) ... ok
+# test_to_lower_normal_case (.TestToLower) ... ok
+# test_multiply_identity (.TestMultiply) ... ok
+# test_multiply_normal_case (.TestMultiply) ... ok
+# test_multiply_zero (.TestMultiply) ... ok
+
+# ----------------------------------------------------------------------
+# Ran 6 tests in 0.001s
+
+# OK

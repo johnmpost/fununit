@@ -1,5 +1,13 @@
 # fununit
 
+## Installation
+
+You can install fununit from PyPI:
+
+`pip install fununit`
+
+## Description
+
 `fununit` ("**fun**ctional **unit** testing") is a functional, declarative, unit-testing library for testing pure functions in Python. It has the following characteristics:
 
 - functional
@@ -15,8 +23,10 @@
 - framework-agnostic
   - fununit is not coupled with any particular testing framework
   - rather, it has adapters to translate fununit tests into any other format
-  - currently, there is an adapter for the built-in `unittest` module, which works great with fununit
+  - currently, there is an adapter for the built-in `unittest` module, which works great for fununit
   - if you have specific requirements, feel free to write you own custom adapter
+
+## How to use
 
 fununit is a library to test pure functions. Take a look at `example.py` to see fununit being used. Because the API is very flexible, you can extend and build its simple functions into a custom flow if you want. But, here is the standard approach to writing tests with fununit:
 

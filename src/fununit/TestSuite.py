@@ -1,4 +1,4 @@
-from funtest import UnitTest
+from fununit import UnitTest
 
 class TestSuite:
     suite_name = None

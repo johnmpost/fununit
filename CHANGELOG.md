@@ -1,11 +1,11 @@
 # Changelog
 
-All notable changes to this project will probably be documented in this file.
+All notable changes to this project will be documented in this file.
 
-The format should be based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project mostly adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2022-11-19
+## [1.0.0] - 2022-12-27
 
 ### Added
 
@@ -16,3 +16,4 @@ and this project mostly adheres to [Semantic Versioning](https://semver.org/spec
   - this changelog
   - license file
   - how to contribute
+  - build info for PyPI

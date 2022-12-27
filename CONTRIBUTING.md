@@ -1,3 +1,3 @@
-# Contributing to funtest
+# Contributing to fununit
 
 Send a pull request.

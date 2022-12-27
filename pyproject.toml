@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fununit"
+version = "1.0.0"
+description = "a functional, declarative, unit-testing library for testing pure functions"
+readme = "README.md"
+authors = [{ name = "John Post", email = "muffinpost1@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: WTFPL",
+    "License :: Freely Distributable",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Software Development :: Testing :: Unit",
+]
+keywords = ["unit testing", "testing", "functional", "declarative", "pure functions", "testing boilerplate"]
+requires-python = ">=3.9"
+
+[project.urls]
+Homepage = "https://github.com/johnmpost/fununit"

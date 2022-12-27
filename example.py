@@ -1,6 +1,6 @@
 import unittest
-from funtest import TestCase, TestSuite
-from funtest import adapters
+from fununit import TestCase, TestSuite
+from fununit import adapters
 
 def multiply(a, b):
     return a * b

@@ -7,14 +7,16 @@
   - in fact, its core purpose is to test pure functions
   - the fununit API exposes a selection of pure functions, allowing for great flexibility with their use
 - declarative
-  - fununit allows you to describe the tests you want to run in a declarative manner, rather than an imperative manner
+  - fununit allows you to describe the tests you want to run in a declarative manner
+  - expressively describe the tests that you want, not how they should be run
 - removes boilerplate testing code
   - drastically reduces code duplication between tests, improving maintainability
   - allows for writing very succinct code, making it faster and easier to write and read
 - framework-agnostic
   - fununit is not coupled with any particular testing framework
   - rather, it has adapters to translate fununit tests into any other format
-  - currently, there is an adapter for the built-in `unittest` module
+  - currently, there is an adapter for the built-in `unittest` module, which works great with fununit
+  - if you have specific requirements, feel free to write you own custom adapter
 
 fununit is a library to test pure functions. Take a look at `example.py` to see fununit being used. Because the API is very flexible, you can extend and build its simple functions into a custom flow if you want. But, here is the standard approach to writing tests with fununit:
 

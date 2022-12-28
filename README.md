@@ -16,7 +16,7 @@ You can install fununit from PyPI:
   - the fununit API exposes a selection of pure functions, allowing for great flexibility with their use
 - declarative
   - fununit allows you to describe the tests you want to run in a declarative manner
-  - expressively describe the tests that you want, not how they should be run
+  - you get to expressively describe the tests that you want, not how they should be run
 - removes boilerplate testing code
   - drastically reduces code duplication between tests, improving maintainability
   - allows for writing very succinct code, making it faster and easier to write and read

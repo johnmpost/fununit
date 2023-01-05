@@ -10,29 +10,28 @@ def add(a, b):
 
 tags = ["Math"]
 
-multiply_tests = UnitTest.many_from_cases(
+multiply_tests = UnitTest.create_many(
     tags = tags,
     function_name = "multiply",
     function = multiply,
     test_cases = [
         TestCase.create(
-            case_name = "identity",
             parameters = (1, 2),
-            expected = 2),
+            expected = 2,
+            case_name = "identity"),
         TestCase.create(
-            case_name = "normal_case",
+            parameters = (0, 6),
+            expected = 0,
+            case_name = "zero"),
+        TestCase.create(
             parameters = (3, 4),
             expected = 12),
-        TestCase.create(
-            case_name = "zero",
-            parameters = (0, 6),
-            expected = 0),
     ])
 
-add_tests = UnitTest.many_from_cases(
+add_tests = UnitTest.create_many(
     tags, "add", add, [
-        TestCase.create("zero", (0, 0), 0),
-        TestCase.create("positive", (1, 2), 3),
-        TestCase.create("negative", (-1, -2), -3),
-        TestCase.create("mix", (1, -2), -1),
+        TestCase.create((0, 0), 0, "zero"),
+        TestCase.create((1, 2), 3, "positive"),
+        TestCase.create((-1, -2), -3, "negative"),
+        TestCase.create((1, -2), -1, "mixed"),
     ])

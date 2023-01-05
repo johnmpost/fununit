@@ -1,67 +1,37 @@
 import unittest
-from fununit import TestCase, TestSuite
+from fununit import TestCase, UnitTest
 from fununit import adapters
 
 def multiply(a, b):
     return a * b
 
-def to_lower(string):
-    return string.lower()
+def add(a, b):
+    return a + b
 
-multiply_tests = TestSuite.from_cases(
-    suite_name = "Multiply",
+tags = ["Math"]
+
+multiply_tests = UnitTest.create_many(
+    tags = tags,
     function_name = "multiply",
     function = multiply,
     test_cases = [
         TestCase.create(
-            case_name = "identity",
             parameters = (1, 2),
-            expected = 2),
+            expected = 2,
+            case_name = "identity"),
         TestCase.create(
-            case_name = "normal_case",
+            parameters = (0, 6),
+            expected = 0,
+            case_name = "zero"),
+        TestCase.create(
             parameters = (3, 4),
             expected = 12),
-        TestCase.create(
-            case_name = "zero",
-            parameters = (0, 6),
-            expected = 0),
     ])
 
-to_lower_tests = TestSuite.from_cases(
-    suite_name = "ToLower",
-    function_name = "to_lower",
-    function = to_lower,
-    test_cases = [
-        TestCase.create(
-            case_name = "empty_string",
-            parameters = [""],
-            expected = ""),
-        TestCase.create(
-            case_name = "already_lower",
-            parameters = ["hello world"],
-            expected = "hello world"),
-        TestCase.create(
-            case_name = "normal_case",
-            parameters = ["Hello World"],
-            expected = "hello world"),
+add_tests = UnitTest.create_many(
+    tags, "add", add, [
+        TestCase.create((0, 0), 0, "zero"),
+        TestCase.create((1, 2), 3, "positive"),
+        TestCase.create((-1, -2), -3, "negative"),
+        TestCase.create((1, -2), -1, "mixed"),
     ])
-
-all_tests = adapters.unittest.build_load_bundle_suites(
-    [to_lower_tests,
-    multiply_tests,
-    ])
-unittest.TextTestRunner(verbosity=2).run(all_tests)
-
-# OUTPUT:
-
-# test_to_lower_already_lower (.TestToLower) ... ok
-# test_to_lower_empty_string (.TestToLower) ... ok
-# test_to_lower_normal_case (.TestToLower) ... ok
-# test_multiply_identity (.TestMultiply) ... ok
-# test_multiply_normal_case (.TestMultiply) ... ok
-# test_multiply_zero (.TestMultiply) ... ok
-
-# ----------------------------------------------------------------------
-# Ran 6 tests in 0.001s
-
-# OK

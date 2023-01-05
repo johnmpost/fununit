@@ -1,11 +1,11 @@
 class TestCase:
-    case_name = None
     parameters = None
     expected = None
+    case_name = None
 
-def create(case_name, parameters, expected):
+def create(parameters, expected, case_name = None):
     test_case = TestCase()
-    test_case.case_name = case_name
     test_case.parameters = parameters
     test_case.expected = expected
+    test_case.case_name = case_name
     return test_case

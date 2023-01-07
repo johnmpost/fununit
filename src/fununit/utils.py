@@ -1,15 +1,22 @@
-def structurally_equal(a, b):
-    if a.__class__ != b.__class__:
-        return False
+def _structurally_equal_seq(a, b):
+    return len(a) == len(b) and \
+        all(structurally_equal(x, y) for x, y in zip(a, b))
 
-    for key, value in a.__dict__.items():
-        if isinstance(value, (list, dict, set)):
-            if value != b.__dict__[key]:
-                return False
-        elif isinstance(value, object):
-            if not structurally_equal(value, b.__dict__[key]):
-                return False
-        else:
-            if value != b.__dict__[key]:
-                return False
-    return True
+def _structurally_equal_dict(a, b):
+    return set(a.keys()) == set(b.keys()) and \
+        all(structurally_equal(v, b[k]) for k, v in a.items())
+
+def _structurally_equal_class(a, b):
+    return structurally_equal(vars(a), vars(b))
+
+def structurally_equal(a, b):
+    if type(a) != type(b):
+        return False
+    elif isinstance(a, (list, tuple)):
+        return _structurally_equal_seq(a, b)
+    elif isinstance(a, dict):
+        return _structurally_equal_dict(a, b)
+    elif isinstance(a, object):
+        return _structurally_equal_class(a, b)
+    else:
+        return a == b

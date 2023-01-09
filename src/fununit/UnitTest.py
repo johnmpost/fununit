@@ -1,6 +1,8 @@
 from functools import partial
+from utils import structurally_equal
 
 class UnitTest:
+    equality_fn = None
     tags = None
     function_name = None
     function = None
@@ -10,6 +12,7 @@ class UnitTest:
 
 def create(tags, function_name, function, parameters, expected, case_name = None):
     unit_test = UnitTest()
+    unit_test.equality_fn = structurally_equal
     unit_test.tags = tags
     unit_test.function_name = function_name
     unit_test.function = function

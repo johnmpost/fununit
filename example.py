@@ -10,7 +10,7 @@ def add(a, b):
 
 tags = ["Math"]
 
-multiply_tests = UnitTest.create_many(
+multiply_tests = UnitTest.from_cases(
     tags = tags,
     function_name = "multiply",
     function = multiply,
@@ -28,7 +28,7 @@ multiply_tests = UnitTest.create_many(
             expected = 12),
     ])
 
-add_tests = UnitTest.create_many(
+add_tests = UnitTest.from_cases(
     tags, "add", add, [
         TestCase.create((0, 0), 0, "zero"),
         TestCase.create((1, 2), 3, "positive"),

@@ -8,7 +8,7 @@ def multiply(a, b):
 def add(a, b):
     return a + b
 
-tags = ["Math"]
+tags = ["Math", "Prod"]
 
 multiply_tests = UnitTest.from_cases(
     tags = tags,

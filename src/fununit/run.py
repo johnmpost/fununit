@@ -2,11 +2,14 @@ from fununit import TestResult
 from fununit.utils import show_list
 from functools import partial
 
+def show_tags(tags):
+    return f"[{', '.join(tags)}]"
+
 def passed_to_string(did_pass):
     return "PASSED" if did_pass else "FAILED"
 
 def show_passed_result(result):
-    return f"{passed_to_string(result.passed)} {result.function_name}.{result.case_name}"
+    return f"{passed_to_string(result.passed)} {show_tags(result.tags)} {result.function_name}.{result.case_name}"
 
 def show_result(test_result):
     # TODO: when failed, show details on parameters, expected, and actual

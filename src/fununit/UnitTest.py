@@ -6,19 +6,19 @@ class UnitTest:
     tags = None
     function_name = None
     function = None
+    case_name = None
     parameters = None
     expected = None
-    case_name = None
 
-def create(tags, function_name, function, parameters, expected, case_name = None):
+def create(tags, function_name, function, case_name, parameters, expected):
     unit_test = UnitTest()
     unit_test.equality_fn = structurally_equal
     unit_test.tags = tags
     unit_test.function_name = function_name
     unit_test.function = function
+    unit_test.case_name = case_name
     unit_test.parameters = parameters
     unit_test.expected = expected
-    unit_test.case_name = case_name
     return unit_test
 
 def from_case(tags, function_name, function, test_case):

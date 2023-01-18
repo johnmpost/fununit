@@ -16,25 +16,25 @@ multiply_tests = UnitTest.from_cases(
     function = multiply,
     test_cases = [
         TestCase.create(
+            case_name = "identity",
             parameters = (1, 2),
-            expected = 2,
-            case_name = "identity"),
+            expected = 2),
         TestCase.create(
-            parameters = (0, 6),
-            expected = 0,
-            case_name = "zero"),
+            case_name = "zero",
+            parameters = [0, 6],
+            expected = 0),
         TestCase.create(
-            parameters = (3, 4),
+            case_name = "positive",
+            parameters = { "a": 3, "b": 4 },
             expected = 12),
     ])
 
 add_tests = UnitTest.from_cases(
     tags, "add", add, [
-        TestCase.create((0, 0), 0, "zero"),
-        TestCase.create((1, 2), 3, "positive"),
-        TestCase.create((-1, -2), -3, "negative"),
-        TestCase.create((1, -2), -1, "mixed"),
-        TestCase.create({"a": 4, "b": 5}, 9, "bigger")
+        TestCase.create("zero", (0, 0), 0),
+        TestCase.create("positive", (1, 2), 3),
+        TestCase.create("negative", (-1, -2), -3),
+        TestCase.create("mixed", (1, -2), -1),
     ])
 
 run_tests(multiply_tests + add_tests)

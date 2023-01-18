@@ -12,7 +12,6 @@ def show_passed_result(result):
     return f"{passed_to_string(result.passed)} {show_tags(result.tags)} {result.function_name}.{result.case_name}"
 
 def show_result(test_result):
-    # TODO: when failed, show details on parameters, expected, and actual
     return show_passed_result(test_result)
 
 def run_tests_custom_batch(show_results_fn, unit_tests):

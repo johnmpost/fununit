@@ -33,6 +33,7 @@ add_tests = UnitTest.from_cases(
         TestCase.create((1, 2), 3, "positive"),
         TestCase.create((-1, -2), -3, "negative"),
         TestCase.create((1, -2), -1, "mixed"),
+        TestCase.create({"a": 4, "b": 5}, 9, "bigger")
     ])
 
 results = TestResult.from_tests(multiply_tests + add_tests)

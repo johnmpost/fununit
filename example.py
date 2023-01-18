@@ -1,5 +1,6 @@
 import unittest
 from fununit import TestCase, UnitTest, TestResult
+from fununit.run import run_tests
 
 def multiply(a, b):
     return a * b
@@ -36,4 +37,4 @@ add_tests = UnitTest.from_cases(
         TestCase.create({"a": 4, "b": 5}, 9, "bigger")
     ])
 
-results = TestResult.from_tests(multiply_tests + add_tests)
+run_tests(multiply_tests + add_tests)

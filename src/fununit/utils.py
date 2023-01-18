@@ -20,3 +20,7 @@ def structurally_equal(a, b):
         return _structurally_equal_class(a, b)
     else:
         return a == b
+
+def show_list(strings):
+    return "\n".join(strings)
+

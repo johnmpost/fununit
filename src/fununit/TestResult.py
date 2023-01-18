@@ -1,3 +1,5 @@
+from fununit.utils import show_list
+
 class TestResult:
     tags = None
     function_name = None
@@ -26,7 +28,7 @@ def get_actual_from_test(unit_test):
     return actual
 
 def from_test(unit_test):
-    actual = get_actual_from_test(unit_test),
+    actual = get_actual_from_test(unit_test)
     return create(
         unit_test.tags,
         unit_test.function_name,

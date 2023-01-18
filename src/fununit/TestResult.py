@@ -19,8 +19,11 @@ def create(tags, function_name, case_name, parameters, expected, actual, passed)
     return test_result
 
 def get_actual_from_test(unit_test):
-    # check if params are sequence or dict, call function accordingly
-    pass
+    params_is_dict = isinstance(unit_test.parameters, dict)
+    actual = unit_test.function(**unit_test.parameters) \
+        if params_is_dict \
+        else unit_test.function(*unit_test.parameters)
+    return actual
 
 def from_test(unit_test):
     actual = get_actual_from_test(unit_test),

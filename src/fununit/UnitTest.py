@@ -1,5 +1,5 @@
 from functools import partial
-from utils import structurally_equal
+from fununit.utils import structurally_equal
 
 class UnitTest:
     equality_fn = None

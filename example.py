@@ -1,6 +1,5 @@
 import unittest
-from fununit import TestCase, UnitTest
-from fununit import adapters
+from fununit import TestCase, UnitTest, TestResult
 
 def multiply(a, b):
     return a * b
@@ -35,3 +34,5 @@ add_tests = UnitTest.from_cases(
         TestCase.create((-1, -2), -3, "negative"),
         TestCase.create((1, -2), -1, "mixed"),
     ])
+
+results = TestResult.from_tests(multiply_tests + add_tests)

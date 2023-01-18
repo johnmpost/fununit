@@ -1,4 +1,5 @@
 from fununit import TestResult
+from fununit.utils import show_list
 
 def show(test_result):
     return f"{test_result.function_name}, {test_result.case_name}, {test_result.expected}, {test_result.actual}, {test_result.passed}"

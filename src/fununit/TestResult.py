@@ -1,5 +1,3 @@
-from fununit.utils import show_list
-
 class TestResult:
     tags = None
     function_name = None

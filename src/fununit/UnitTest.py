@@ -26,9 +26,9 @@ def from_case(tags, function_name, function, test_case):
         tags,
         function_name,
         function,
+        test_case.case_name,
         test_case.parameters,
-        test_case.expected,
-        test_case.case_name)
+        test_case.expected)
 
 def from_cases(tags, function_name, function, test_cases):
     return [from_case(tags, function_name, function, test_case)

@@ -2,8 +2,15 @@ from fununit import TestResult
 from fununit.utils import show_list
 from functools import partial
 
+def passed_to_string(did_pass):
+    return "PASSED" if did_pass else "FAILED"
+
+def show_passed_result(result):
+    return f"{passed_to_string(result.passed)} {result.function_name}.{result.case_name}"
+
 def show_result(test_result):
-    return f"{test_result.function_name}, {test_result.case_name}, {test_result.expected}, {test_result.actual}, {test_result.passed}"
+    # TODO: when failed, show details on parameters, expected, and actual
+    return show_passed_result(test_result)
 
 def run_tests_custom_batch(show_results_fn, unit_tests):
     results = TestResult.from_tests(unit_tests)

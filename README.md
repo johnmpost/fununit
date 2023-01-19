@@ -57,7 +57,7 @@ multiply_tests = UnitTest.from_cases(
     ])
 ```
 
-And now we have a full set of unit tests for the multiply function, written using fununit. The easiest way to run them is to use the default test runner:
+And now we have a full set of unit tests for the multiply function, described using fununit. The easiest way to run them is to use the default test runner:
 
 ```python
 from fununit.run import run_tests
@@ -73,3 +73,11 @@ PASSED [Math] multiply.identity
 PASSED [Math] multiply.positive
 FAILED [Math] multiply.negative
 ```
+
+Check out example.py and the advanced usage section for more.
+
+# Advanced
+
+## Usage
+
+## Advantages of fununit

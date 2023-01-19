@@ -33,6 +33,3 @@ def from_case(tags, function_name, function, test_case):
 def from_cases(tags, function_name, function, test_cases):
     return [from_case(tags, function_name, function, test_case)
         for test_case in test_cases]
-
-def many_from_cases_with_tags(tags):
-    return partial(from_cases, tags)

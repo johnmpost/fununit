@@ -1,5 +1,5 @@
 from functools import partial
-from fununit.utils import structurally_equal
+from fununit.utils import _structurally_equal
 
 class UnitTest:
     equality_fn = None
@@ -12,7 +12,7 @@ class UnitTest:
 
 def create(tags, function_name, function, case_name, parameters, expected):
     unit_test = UnitTest()
-    unit_test.equality_fn = structurally_equal
+    unit_test.equality_fn = _structurally_equal
     unit_test.tags = tags
     unit_test.function_name = function_name
     unit_test.function = function

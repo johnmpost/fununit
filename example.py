@@ -1,5 +1,4 @@
-import unittest
-from fununit import TestCase, UnitTest, TestResult
+from fununit import TestCase, UnitTest
 from fununit.run import run_tests
 
 def multiply(a, b):

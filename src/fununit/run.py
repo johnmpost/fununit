@@ -29,7 +29,7 @@ def run_tests_list_display(show_result_fn, unit_tests):
     def show_results_fn(results):
         shown_results = [show_result_fn(result) for result in results]
         return _show_list(shown_results)
-    run_tests_custom_batch(show_results_fn, unit_tests)
+    run_tests_batch_display(show_results_fn, unit_tests)
 
-run_tests = partial(run_tests_custom_single, _show_result)
+run_tests = partial(run_tests_list_display, _show_result)
 

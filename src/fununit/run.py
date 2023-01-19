@@ -1,5 +1,5 @@
 from fununit import TestResult
-from fununit.utils import _show_list
+from fununit._utils import _show_list
 from functools import partial
 
 def _show_tags(tags):

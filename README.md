@@ -59,8 +59,8 @@ from fununit import TestCase, UnitTest
 
 multiply_tests = UnitTest.from_cases(
     ["Math"], "multiply", multiply, [
-        TestCase.create("zero", (0, 6), 0)
-        TestCase.create("identity", (1, 2), 2)
+        TestCase.create("zero", (0, 6), 0),
+        TestCase.create("identity", (1, 2), 2),
         TestCase.create("positive", (3, 4), 12)
     ])
 ```
@@ -72,8 +72,8 @@ from fununit.UnitTest import from_cases_implicit as tests
 
 multiply_tests = tests(
     ["Math"], "multiply", multiply, [
-        ("zero", (0, 6), 0)
-        ("identity", (1, 2), 2)
+        ("zero", (0, 6), 0),
+        ("identity", (1, 2), 2),
         ("positive", (3, 4), 12)
     ])
 ```
@@ -135,7 +135,7 @@ And there are plenty of structural differences in how those common elements are 
 - Pytest is syntax-heavy. You have a decorator, you need to define a new function using the `def` keyword, you need to use the `==` operator and the `assert` keyword. Fununit just has functions and values, which improves combosability.
 - Pytest has (relatively) a lot of redundancy and repetition. Every test you write will need the parametrize decorator, and you'll need to define a test function with an assert statement in it. With fununit, you have the option to cut out all unnecessary repetition, and only provide the things that actually matter for each unit test.
 
-These advantages are nuanced, to be sure. There's nothing wrong with pytest's parametrize, in fact it is actually pretty nice. But unit testing is so common that I think it is worth it to take something pretty good and make it even better.
+These advantages are nuanced, to be sure. There's nothing wrong with pytest's parametrize, in fact it is actually pretty nice. But unit testing is so common that I think it is worth it to take something pretty good and improve that last little bit.
 
 All in all, in terms of writing tests, the main benefit that fununit offers comes down to a moderately higher level of abstraction.
 

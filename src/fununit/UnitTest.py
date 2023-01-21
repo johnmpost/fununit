@@ -1,5 +1,6 @@
 from functools import partial
 from fununit._utils import _structurally_equal
+from fununit import TestCase
 
 class UnitTest:
     equality_fn = None
@@ -33,6 +34,11 @@ def from_case(tags, function_name, function, test_case):
 def from_cases(tags, function_name, function, test_cases):
     return [from_case(tags, function_name, function, test_case)
         for test_case in test_cases]
+
+def from_cases_implicit(tags, function_name, function, test_case_tuples):
+    test_cases = [TestCase.create(*test_case_tuple)
+        for test_case_tuple in test_case_tuples]
+    return from_cases(tags, function_name, function, test_cases)
 
 def from_cases_with_tags(tags):
     return partial(from_cases, tags)

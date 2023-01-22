@@ -141,7 +141,7 @@ All in all, in terms of writing tests, the main benefit that fununit offers come
 
 ## More Than Writing Tests
 
-it's about the entire fununit philosophy and extensible api, not just the standard way of writing tests. these things also offer benefits
+The advantages of fununit go beyond just what it looks like to write tests, though. Fununit provides a clear, solid structure for a new way to think about unit testing, and it makes it very easy to access and extend any level of that structure. You of course get all the built-in functionality, 
 
 ## Laundry List
 

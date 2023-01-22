@@ -1,5 +1,6 @@
 from fununit import TestCase, UnitTest
 from fununit.run import run_tests
+from fununit.UnitTest import from_cases_implicit as tests
 
 def multiply(a, b):
     return a * b
@@ -28,12 +29,12 @@ multiply_tests = UnitTest.from_cases(
             expected = 12),
     ])
 
-add_tests = UnitTest.from_cases(
+add_tests = tests(
     tags, "add", add, [
-        TestCase.create("zero", (0, 0), 0),
-        TestCase.create("positive", (1, 2), 3),
-        TestCase.create("negative", (-1, -2), -3),
-        TestCase.create("mixed", (1, -2), -1),
+        ("zero", (0, 0), 0),
+        ("positive", (1, 2), 3),
+        ("negative", (-1, -2), -3),
+        ("mixed", (1, -2), -1),
     ])
 
 run_tests(multiply_tests + add_tests)

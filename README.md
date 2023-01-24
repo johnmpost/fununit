@@ -99,11 +99,102 @@ Check out example.py and the advanced usage section for more.
 
 # Advanced Usage
 
-- explanation of some advanced functions
-- levels of verbosity that you can do
-- ideas for non-basic testing patterns
-- ideas for non-basic testing flows
-- explanation of equality function property of UnitTest
+## Full API
+
+coming soon
+
+## Verbosity Levels When Describing Tests
+
+There are several levels of verbosity that you can use when you write tests with basic fununit. Many things might affect your choice of which to use, such as personal opinion or complexity of the function being tested.
+
+```python
+from fununit.UnitTest import from_cases_implicit as tests
+
+multiply_tests = tests(
+    ["Math"], "multiply", multiply, [
+        ("zero", (0, 6), 0),
+        ("identity", (1, 2), 2),
+        ("positive", (3, 4), 12)
+    ])
+```
+
+```python
+multiply_tests = UnitTest.from_cases(
+    ["Math"], "multiply", multiply, [
+        TestCase.create("zero", (0, 6), 0),
+        TestCase.create("identity", (1, 2), 2),
+        TestCase.create("positive", (3, 4), 12)
+    ])
+```
+
+```python
+multiply_tests = UnitTest.from_cases(
+    ["Math"], "multiply", multiply, [
+        TestCase.create(
+            case_name = "zero",
+            parameters = (0, 6),
+            expected = 0),
+        TestCase.create(
+            case_name = "identity",
+            parameters = (1, 2),
+            expected = 2),
+        TestCase.create(
+            case_name = "positive",
+            parameters = (3, 4),
+            expected = 12)
+    ])
+```
+
+```python
+multiply_tests = UnitTest.from_cases(
+    ["Math"], "multiply", multiply, [
+        TestCase.create(
+            case_name = "zero",
+            parameters = {
+                "a": 0,
+                "b": 6
+            }
+            expected = 0),
+        TestCase.create(
+            case_name = "identity",
+            parameters = {
+                "a": 1,
+                "b": 2
+            }
+            expected = 2),
+        TestCase.create(
+            case_name = "positive",
+            parameters = {
+                "a": 3,
+                "b": 4
+            }
+            expected = 12)
+    ])
+```
+
+## Fancy Testing Patterns
+
+coming soon
+
+## Fancy Testing Flows
+
+coming soon
+
+## Value Equality in Fununit
+
+The `UnitTest` type has another property not discussed in the Basic Usage section: `equality_fn`. This property defines the function that should be used to determine whether the actual result of the test is equal to the expected result. Fununit has a default equality function that it uses for the built-in `UnitTest` functions. However, the property remains so that you can use a custom equality function if you want to.
+
+Fununit's default equality function is meant to be better for its users than `==`. As fununit is for testing pure functions, `==` is useless when it does object reference comparisons instead of value comparisons. So, fununit's default equality function compares lists and tuples element-wise and dictionaries by their keys and associated values. It also compares user-created class types by their properties. This means you can use classes like this:
+
+```python
+class Person:
+    name = None
+    address = None
+    phone_number = None
+    # None as the default value just for example
+```
+
+and fununit will compare all the property values to determine equality. All other types are compared using `==`.
 
 # Advantages of Fununit
 
@@ -137,7 +228,7 @@ And there are plenty of structural differences in how those common elements are 
 
 These advantages are nuanced, to be sure. There's nothing wrong with pytest's parametrize, in fact it is actually pretty nice. But unit testing is so common that I think it is worth it to take something pretty good and improve that last little bit.
 
-All in all, it comes down to this: fununit provides similar functionality to parameterized unit testing, but with a moderately higher level of abstraction, more structure, and more flexibility for the user to extend it with custom functionality.
+**All in all, it comes down to this:** fununit provides similar functionality to parameterized unit testing, but with a moderately higher level of abstraction, more structure, and more flexibility for the user to extend it with custom functionality.
 
 ## More Than Writing Tests
 

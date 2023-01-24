@@ -105,7 +105,7 @@ Check out example.py and the advanced usage section for more.
 - ideas for non-basic testing flows
 - explanation of equality function property of UnitTest
 
-# Advantages of fununit
+# Advantages of Fununit
 
 ## Writing Tests
 
@@ -137,19 +137,19 @@ And there are plenty of structural differences in how those common elements are 
 
 These advantages are nuanced, to be sure. There's nothing wrong with pytest's parametrize, in fact it is actually pretty nice. But unit testing is so common that I think it is worth it to take something pretty good and improve that last little bit.
 
-All in all, in terms of writing tests, the main benefit that fununit offers comes down to a moderately higher level of abstraction.
+All in all, it comes down to this: fununit provides similar functionality to parameterized unit testing, but with a moderately higher level of abstraction, more structure, and more flexibility for the user to extend it with custom functionality.
 
 ## More Than Writing Tests
 
-The advantages of fununit go beyond just what it looks like to write tests, though. Fununit provides a clear, solid structure for a new way to think about unit testing, and it makes it very easy to access and extend any level of that structure. You of course get all the built-in functionality, 
+The advantages of fununit go beyond just what it looks like to write tests, though. Fununit provides a clear, solid structure for a new way to think about unit testing, and it makes it very easy to access and extend any level of that structure. You of course get all the built-in functionality, but that's just the foundation. From there, you get to decide where you take the ideas that fununit offers, whether that's writing cool things on top of fununit's core, or taking the types and rewriting everything else. (In either case, consider contributing to fununit!)
 
-## Laundry List
+## Laundry List of Benefits
 
-- **Functional Approach:** fununit is based on functional programming concepts, which allows for a more modular, composable and reusable way of writing and structuring tests. This can make it easier to understand and maintain the test codebase.
-- **Declarative Testing:** fununit's approach is fully declarative, which allows the user to expressively describe the tests that they want, not how they should be run.
-- **Test Case Management:** fununit allows for better management of test cases, as it lets the user isolate the them. This allows for better organization and reusability of test cases.
-- **Test Result Management:** fununit allows for better management of test results, as it explicitly treats test results as their own type. This allows for better organization and analysis of test results.
-- **Flexible Test Reporting:** fununit allows full control over the test reporting process, which can be useful for customizing the results display, generating reports in different formats, or integrating with other tools.
-- **Custom Test Runners:** fununit makes it easy to make custom test runners, which can be useful for adapting the test execution process to specific needs. This can be useful for adding custom logic or hooks for test execution.
-- **Programmatic Control of Test Execution:** fununit allows for programmatic control over the test execution process. This means that users have full control over when, how, and which tests are run.
-- **Test Structure:** fununit provides a clear and novel structure for the entire unit testing process. It is rigid in all the right ways, and flexible and extensible in every other way. With fununit, you of course get all the built-in functions, but those are just the groundwork for a brand new way of thinking about unit testing. You get to decide where you take these ideas, whether that's building cool things on top of fununit's core, or rewriting almost everything to make it even better. (If you decide to do that, consider contributing!)
+- **Functional Approach:** Fununit is based on functional programming concepts, which allows for a more modular, composable and reusable way of writing and structuring tests. This can make it easier to understand and maintain the test codebase.
+- **Declarative Testing:** Fununit's approach is fully declarative, which allows the user to expressively describe the tests that they want, not how they should be run.
+- **Test Case Management:** Fununit allows for better management of test cases, as it lets the user isolate the them. This allows for better organization and reusability of test cases.
+- **Test Result Management:** Fununit allows for better management of test results, as it explicitly treats test results as their own type. This allows for better organization and analysis of test results.
+- **Flexible Test Reporting:** Fununit allows full control over the test reporting process, which can be useful for customizing the results display, generating reports in different formats, or integrating with other tools.
+- **Custom Test Runners:** Fununit makes it easy to make custom test runners, which can be useful for adapting the test execution process to specific needs. This can be useful for adding custom logic or hooks for test execution.
+- **Programmatic Control of Test Execution:** Fununit allows for programmatic control over the test execution process. This means that users have full control over when, how, and which tests are run.
+- **Test Structure:** Fununit provides a clear and novel structure for the entire unit testing process. It is rigid in all the right ways, and flexible and extensible in every other way. With fununit, you of course get all the built-in functions, but those are just the groundwork for a brand new way of thinking about unit testing. You get to decide where you take these ideas, whether that's building cool things on top of fununit's core, or rewriting almost everything to make it even better. (If you decide to do that, consider contributing!)

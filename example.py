@@ -1,15 +1,17 @@
-import unittest
-from fununit import TestCase, TestSuite
-from fununit import adapters
+from fununit import TestCase, UnitTest
+from fununit.run import run_tests
+from fununit.UnitTest import from_cases_implicit as tests
 
 def multiply(a, b):
     return a * b
 
-def to_lower(string):
-    return string.lower()
+def add(a, b):
+    return a + b
 
-multiply_tests = TestSuite.from_cases(
-    suite_name = "Multiply",
+tags = ["Math", "Prod"]
+
+multiply_tests = UnitTest.from_cases(
+    tags = tags,
     function_name = "multiply",
     function = multiply,
     test_cases = [
@@ -18,50 +20,21 @@ multiply_tests = TestSuite.from_cases(
             parameters = (1, 2),
             expected = 2),
         TestCase.create(
-            case_name = "normal_case",
-            parameters = (3, 4),
-            expected = 12),
-        TestCase.create(
             case_name = "zero",
-            parameters = (0, 6),
-            expected = 0),
+            parameters = [0, 6],
+            expected = 1), # will fail
+        TestCase.create(
+            case_name = "positive",
+            parameters = { "a": 3, "b": 4 },
+            expected = 12),
     ])
 
-to_lower_tests = TestSuite.from_cases(
-    suite_name = "ToLower",
-    function_name = "to_lower",
-    function = to_lower,
-    test_cases = [
-        TestCase.create(
-            case_name = "empty_string",
-            parameters = [""],
-            expected = ""),
-        TestCase.create(
-            case_name = "already_lower",
-            parameters = ["hello world"],
-            expected = "hello world"),
-        TestCase.create(
-            case_name = "normal_case",
-            parameters = ["Hello World"],
-            expected = "hello world"),
+add_tests = tests(
+    tags, "add", add, [
+        ("zero", (0, 0), 0),
+        ("positive", (1, 2), 3),
+        ("negative", (-1, -2), -3),
+        ("mixed", (1, -2), -1),
     ])
 
-all_tests = adapters.unittest.build_load_bundle_suites(
-    [to_lower_tests,
-    multiply_tests,
-    ])
-unittest.TextTestRunner(verbosity=2).run(all_tests)
-
-# OUTPUT:
-
-# test_to_lower_already_lower (.TestToLower) ... ok
-# test_to_lower_empty_string (.TestToLower) ... ok
-# test_to_lower_normal_case (.TestToLower) ... ok
-# test_multiply_identity (.TestMultiply) ... ok
-# test_multiply_normal_case (.TestMultiply) ... ok
-# test_multiply_zero (.TestMultiply) ... ok
-
-# ----------------------------------------------------------------------
-# Ran 6 tests in 0.001s
-
-# OK
+run_tests(multiply_tests + add_tests)

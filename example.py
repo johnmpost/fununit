@@ -22,7 +22,7 @@ multiply_tests = UnitTest.from_cases(
         TestCase.create(
             case_name = "zero",
             parameters = [0, 6],
-            expected = 1),
+            expected = 1), # will fail
         TestCase.create(
             case_name = "positive",
             parameters = { "a": 3, "b": 4 },

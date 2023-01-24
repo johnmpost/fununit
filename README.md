@@ -234,7 +234,7 @@ These advantages are nuanced, to be sure. There's nothing wrong with pytest's pa
 
 The advantages of fununit go beyond just what it looks like to write tests, though. Fununit provides a clear, solid structure for a new way to think about unit testing, and it makes it very easy to access and extend any level of that structure. You of course get all the built-in functionality, but that's just the foundation. From there, you get to decide where you take the ideas that fununit offers, whether that's writing cool things on top of fununit's core, or taking the types and rewriting everything else. (In either case, consider contributing to fununit!)
 
-## Laundry List of Benefits
+## Assorted Benefits
 
 - **Functional Approach:** Fununit is based on functional programming concepts, which allows for a more modular, composable and reusable way of writing and structuring tests. This can make it easier to understand and maintain the test codebase.
 - **Declarative Testing:** Fununit's approach is fully declarative, which allows the user to expressively describe the tests that they want, not how they should be run.

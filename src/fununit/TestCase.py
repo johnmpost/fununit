@@ -1,7 +1,7 @@
 class TestCase:
+    case_name = None
     parameters = None
     expected = None
-    case_name = None
 
 def create(case_name, parameters, expected):
     test_case = TestCase()

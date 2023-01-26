@@ -101,7 +101,70 @@ Check out example.py and the advanced usage section for more.
 
 ## Full API
 
-coming soon
+### TestCase module
+
+- `TestCase` type
+  - represents an independent test case
+  - has properties:
+    - `case_name`
+    - `parameters`
+    - `expected`
+- `create(case_name, parameters, expected)`
+  - creates a `TestCase`
+
+### UnitTest module
+
+- `UnitTest` type
+  - represents one full unit test
+  - has properties:
+    - `equality_fn` - see section "Value Equality in Fununit"
+    - `tags`
+    - `function_name`
+    - `function`
+    - `case_name`
+    - `parameters`
+    - `expected`
+- `create(tags, function_name, function, case_name, parameters, expected)`
+  - creates a `UnitTest` with the default equality function
+- `from_case(tags, function_name, function, test_case)`
+  - creates a `UnitTest` from a `TestCase`
+- `from_cases(tags, function_name, function, test_cases)`
+  - creates many `UnitTests` for a single function from many `TestCases`
+- `from_cases_implicit(tags, function_name, function, test_case_tuples)`
+  - same as `from_cases` but instead of passing in a list of `TestCases`, you pass in a list of 3-tuples representing them
+  - e.g. `TestCase.create("identity", (1, 4), 4)` becomes `("identity", (1, 4), 4)`
+- `from_cases_with_tags(tags)`
+  - a convenience function that returns a function like `from_cases` but with the `tags` baked in
+  - can be useful to make several sets of unit tests with the same tags, without needing to rewrite the tags each time
+
+### TestResult module
+
+Note: It is unlikely that you will use any of the functions in this module if you are just writing unit tests. They are available, however, if you decide you need them, for example, if you are writing a custom test runner.
+
+- `TestResult` type
+  - represents the result of one unit test
+  - has properties:
+    - `tags`
+    - `function_name`
+    - `case_name`
+    - `parameters`
+    - `expected`
+    - `actual`
+    - `passed`
+- `create(tags, function_name, case_name, parameters, expected, actual, passed)`
+  - creates a `TestResult`
+- `get_actual_from_test(unit_test)`
+  - gets the actual result of running the test
+- `from_test(unit_test)`
+  - creates a `TestResult` from a `UnitTest` by running the test
+- `from_tests(unit_tests)`
+  - creates many `TestResults` from many `UnitTests` by running each test
+
+### run module
+
+- `run_tests(unit_tests)`
+  - runs the given `UnitTests` and displays the results in the console
+- `run_tests
 
 ## Verbosity Levels When Describing Tests
 

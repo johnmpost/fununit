@@ -164,7 +164,12 @@ Note: It is unlikely that you will use any of the functions in this module if yo
 
 - `run_tests(unit_tests)`
   - runs the given `UnitTests` and displays the results in the console
-- `run_tests
+- `run_tests_list_display(show_result_fn, unit_tests)`
+  - a convenience function that runs the given unit tests and lets you specify how each TestResult should be shown
+  - `show_result_fn` is a function that accepts a `TestResult` and returns a string representation of it
+- `run_tests_batch_display(show_results_fn, unit_tests)`
+  - a convenience function that runs the given unit tests and gives you full control of how test results are shown
+  - `show_results_fn` is a function that accepts a list of `TestResults` and returns a string representation of them
 
 ## Verbosity Levels When Describing Tests
 

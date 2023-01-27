@@ -78,7 +78,7 @@ multiply_tests = tests(
     ])
 ```
 
-Whichever format you choose, we now have a finished set of unit tests for the multiply function, described using fununit. The easiest way to run them is to use the default test runner:
+Even more possibilities are shown in the "Verbosity Levels When Describing Tests" section below. (This includes specifying parameters as a dictionary!) Whichever format you choose, we now have a finished set of unit tests for the multiply function, described using fununit. The easiest way to run them is to use the default test runner:
 
 ```python
 from fununit.run import run_tests

@@ -240,13 +240,18 @@ multiply_tests = UnitTest.from_cases(
     ])
 ```
 
-## Fancy Testing Patterns
+## Fun Possibilities
 
-coming soon
-
-## Fancy Testing Flows
-
-coming soon
+- Create a list of test cases that are agnostic to any particular function implementation. Then, reuse the test cases across different function implementations.
+  ```python
+  UnitTest.from_cases(["Sorting"], "bubble_sort", bubble_sort, sorting_test_cases)
+  UnitTest.from_cases(["Sorting"], "merge_sort", merge_sort, sorting_test_cases)
+  ```
+- Create test case data providers that can provide test case data in different formats, such as JSON, XML, or CSV.
+- Report the results of tests to a file, like a CSV.
+- Any filtering or sorting of test cases, unit tests, and test results you could possibly imagine.
+- Generate tests programatically for property-based testing.
+- Write any integration you want with external tools like CI pipelines.
 
 ## Value Equality in Fununit
 

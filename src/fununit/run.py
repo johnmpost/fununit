@@ -1,6 +1,7 @@
 from fununit import TestResult
 from fununit._utils import _show_list
 from functools import partial
+from fununit._utils import _indent_lines
 
 def _show_tags(tags):
     return f"[{', '.join(tags)}]"
@@ -11,8 +12,15 @@ def _passed_to_string(did_pass):
 def _show_passed_result(result):
     return f"{_passed_to_string(result.passed)} {_show_tags(result.tags)} {result.function_name}.{result.case_name}"
 
+def _show_failed_result(result):
+    summary = f"{_passed_to_string(result.passed)} {_show_tags(result.tags)} {result.function_name}.{result.case_name}"
+    detail = f"parameters = {result.parameters}\nexpected = {result.expected}\nactual = {result.actual}"
+    indented_detail = _indent_lines(4, detail)
+    return f"{summary}\n{indented_detail}"
+
 def _show_result(test_result):
-    return _show_passed_result(test_result)
+    return _show_passed_result(test_result) if test_result.passed \
+        else _show_failed_result(test_result)
 
 def run_tests_batch_display(show_results_fn, unit_tests):
     """

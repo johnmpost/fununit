@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='fununit',
-    version='2.0.0',
+    version='2.1.0',
     description='a functional, declarative, unit-testing library for testing pure functions',
     long_description="Find the documentation at the project's homepage: https://github.com/johnmpost/fununit/",
     author='John Post',

@@ -24,3 +24,12 @@ def _structurally_equal(a, b):
 def _show_list(strings):
     return "\n".join(strings)
 
+def _show_class(to_show):
+    properties = [f"{attr} = {value!r}" for attr, value in vars(to_show).items()]
+    joined_properties = ", ".join(properties)
+    return "{to_show.__class__.__name__}({joined_properties})"
+
+def _show(to_show):
+    is_class = hasattr(to_show, "__dict__")
+    return _show_class(to_show) if is_class else repr(to_show)
+

@@ -93,6 +93,9 @@ PASSED [Math] multiply.zero
 PASSED [Math] multiply.identity
 PASSED [Math] multiply.positive
 FAILED [Math] multiply.negative
+    parameters = [-2, -5]
+    expected = 10
+    actual = -10
 ```
 
 Check out example.py and the advanced usage section for more.

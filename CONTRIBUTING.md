@@ -7,7 +7,7 @@ We welcome and appreciate any contributions to our project!
 1. Fork the repository.
 2. Create a new branch for your contribution.
 3. Make your changes and commit them to your branch.
-4. Submit a pull request to the `dev` branch of the original repository.
+4. Submit a pull request to the original repository.
 
 ## Issue Tracking
 
